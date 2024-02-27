@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Local Storage</title>
+</head>
+<body>
+    <iframe id="frame" src="https://files.adriver.ru/z.daulenov/JS755/frame.html" frameborder="0"></iframe>
+
+    <script>
+        const frame = document.getElementById("frame");
+
+        frame.onload = function() {
+            if (frame.contentWindow.localStorage) {
+                console.log("localStorage доступен");
+            } else {
+                console.log("localStorage недоступен");
+            }
+        };
+
+        const key = "test_key2";
+        const value = "test_value";
+        localStorage.setItem(key, value);
+
+        const storedValue = localStorage.getItem(key);
+        console.log("Значение из localStorage2: ", storedValue);
+    </script>
+    
+</body>
+</html>
